@@ -1,5 +1,9 @@
 FROM mcr.microsoft.com/devcontainers/miniconda:1-3
 
+# [Optional] Uncomment this section to install additional OS packages.
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends firefox-esr gnumeric
+
 USER vscode
 WORKDIR /home/vscode
 
@@ -20,6 +24,3 @@ RUN tar -xvzf data-mapping.v1.3.tgz
 
 
 
-# [Optional] Uncomment this section to install additional OS packages.
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends firefox-esr gnumeric
