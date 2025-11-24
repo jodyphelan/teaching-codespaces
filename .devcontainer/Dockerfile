@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/devcontainers/miniconda:1-3
 #     && apt-get -y install --no-install-recommends firefox-esr gnumeric qpdfview
 
 USER vscode
-# WORKDIR /home/vscode
+WORKDIR /home/vscode
 
 RUN wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
 RUN bash Miniforge3-Linux-x86_64.sh -b
